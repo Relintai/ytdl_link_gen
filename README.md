@@ -7,7 +7,7 @@ A little python script that helps archiving youtube (and other) channels using y
 - Generates a simple batch file that you can use to get everything.
 - Skips downloading all video metadata, unlike vanilla yt-dlp.
 - Keeps track the videos you have without needing to keep the videos accessible, and only dowloads missing stuff.
-- Numbers each video, also remembers old numbering (meaning: deleted videos will not screw up video numbering).
+- Numbers each video, also remembers old numbering (meaning: deleted videos will not screw it up).
 - Backs up it's data before an update.
 
 ## Usage
