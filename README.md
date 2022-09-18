@@ -1,4 +1,4 @@
-# ytdl_link_gen
+# YTDL Link Gen
 
 A little python script that helps archiving youtube (and other) channels using yt-dlp.
 
