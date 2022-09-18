@@ -1,0 +1,15 @@
+#<category> <link> <json_file_name> <result_folder> <dl params (don't add -o '...')>
+
+# 360p video with english subtitles
+
+random|https://www.youtube.com/c/random_youtube_channel_1/videos|random_youtube_channel_1|random_youtube_channel_1|--playlist-reverse -i -f 'bestvideo[height<=360]+bestaudio/best[height<=360]' --restrict-filenames --write-sub --write-auto-sub --sub-lang en
+
+# 480p video with english subtitles
+
+random|https://www.youtube.com/c/random_youtube_channel_2/videos|random_youtube_channel_2|random_youtube_channel_2|--playlist-reverse -i -f 'bestvideo[height<=480]+bestaudio/best[height<=480]' --restrict-filenames --write-sub --write-auto-sub --sub-lang en
+
+# Best quality, with 2 subtitles
+
+good|https://www.youtube.com/c/good_channel/videos|good_channel|good_channel|--playlist-reverse -i -f 'bestvideo+bestaudio/best' --restrict-filenames --write-sub --write-auto-sub --sub-lang en,hu 
+
+# etc ...
