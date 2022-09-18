@@ -30,7 +30,7 @@ Run the script:
 
 If you run into any issue you can safely run the script again, it will continue where it left off.
 
-Once this is finished you can (and should, if you want to update videos again) delete the new temp directory. It contains channel data,
+Once this is finished you can (and should, if you want to update videos again) delete the new `temp` directory which got created. It contains channel data,
 so if an error occurs it won't have to re-download channel lists again.
 
 You should have a ` dl.sh ` now. Containing yt-dlp commands to all videos since the previous run.
