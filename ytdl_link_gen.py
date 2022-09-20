@@ -420,7 +420,7 @@ class YTDLNew(yt_dlp.YoutubeDL):
                 ie_entries = LazyList(ie_entries)
 
             def get_entry(i):
-                return YTDLNew._YoutubeDL__handle_extraction_exceptions(
+                return YTDLNew._handle_extraction_exceptions(
                     lambda self, i: ie_entries[i - 1]
                 )(self, i)
 
