@@ -809,7 +809,10 @@ class ChannelEntry:
 
             files[main_fname] = 1
 
-            command = "yt-dlp " + l["cmdparams"] + " -o './" + self.video_output_dir + "/" + main_fname + ".%(ext)s' " + s["url"]
+            url_escaped = s["url"].replace("'", "\\'")
+            url_escaped = url_escaped.replace('"', '\\"')
+
+            command = "yt-dlp " + l["cmdparams"] + " -o './" + self.video_output_dir + "/" + main_fname + ".%(ext)s' " + url_escaped
 
             command_outfile.write(command + "\n")
 
