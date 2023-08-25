@@ -651,6 +651,8 @@ class ChannelEntry:
     
     video_file_data = None
 
+    was_cached = False
+
 
     def parse_config_line(self, l):
         #d = {
@@ -686,6 +688,8 @@ class ChannelEntry:
 
         #self.output_command_data_file = "result/" + self.category + "/dl.sh"
         self.output_command_data_file = "dl.sh"
+
+        self.was_cached = False
 
     def load_data(self):
         if not os.path.exists(self.data_file) or not os.path.isfile(self.data_file):
@@ -738,6 +742,8 @@ class ChannelEntry:
         if exists(self.temp_data_file):
             with open(self.temp_data_file) as f:
                 data = json.load(f)
+            
+            self.was_cached = True
 
             return data
 
@@ -839,10 +845,13 @@ if command == "gen":
         ce.process()
         ce.unload_data()
 
+        if not ce.was_cached:
+            # TODO make this customizable from the command line
+            sleep_range(10, 5)
+
         ce = None
 
         collected = gc.collect()
         print("Garbage collector: collected", "%d objects." % collected)
 
-        # TODO make this customizable from the commadn line
-        sleep_range(10, 5)
+        
