@@ -743,9 +743,10 @@ class ChannelEntry:
             with open(self.temp_data_file) as f:
                 data = json.load(f)
             
-            self.was_cached = True
+            if not data is None:
+                self.was_cached = True
 
-            return data
+                return data
 
         with YTDLNew(ydl_opts) as ydl:
             data = ydl.extract_info(self.link, False)
