@@ -18,6 +18,8 @@ import sys
 import datetime 
 import shutil
 import gc
+import time
+import random
 
 config_data = []
 video_file_data = {}
@@ -28,6 +30,9 @@ def print_usage():
     print("index <folder list>    : Indexes folders");
     print("gen                    : generates video download shell script");
     exit()
+
+def sleep_range(min_sleep, rand_add):
+    time.sleep(random.random() * float(rand_add) + float(min_sleep))
 
 def copy(src, dest):
     try:
@@ -838,3 +843,6 @@ if command == "gen":
 
         collected = gc.collect()
         print("Garbage collector: collected", "%d objects." % collected)
+
+        # TODO make this customizable from the commadn line
+        sleep_range(10, 5)
