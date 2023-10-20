@@ -12,11 +12,46 @@ A little python script that helps archiving youtube (and other) channels using y
 
 ## Usage
 
+### Python
+
 First make sure that you have python 3 installed.
+
+#### Without python virtual environments (global install)
 
 Install yt-dlp:
 
 ` sudo pip install yt-dlp  `
+
+#### Using python virtual environments
+
+create a new virtual environment in the current folder:
+
+` python -m venv venv `
+
+This will create a new venv folder.
+
+Activate it:
+
+POSIX:
+
+bash/zsh ` $ source venv/bin/activate `\
+fish ` $ source venv/bin/activate.fish `\
+csh/tcsh ` $ source venv/bin/activate.csh `\
+PowerShell ` $ venv/bin/Activate.ps1 `\
+bash (alternate) ` $ . ./venv/bin/activate `
+
+Windows:
+	
+cmd.exe ` C:\> venv\Scripts\activate.bat `\
+PowerShell ` PS C:\> venv\Scripts\Activate.ps1 `
+	
+Install yt-dlp:
+
+` pip install yt-dlp  `
+
+Here are the [full python virtualenv docs](https://docs.python.org/3/library/venv.html) if needed.
+
+### Script
 
 Set up your config file:
 
