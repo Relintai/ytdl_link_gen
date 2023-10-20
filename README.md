@@ -45,9 +45,13 @@ Windows:
 cmd.exe ` C:\> venv\Scripts\activate.bat `\
 PowerShell ` PS C:\> venv\Scripts\Activate.ps1 `
 	
-Install yt-dlp:
+Install the newest yt-dlp (Recommended, as sites change a lot.):
 
 ` pip install yt-dlp  `
+
+Or install the last tested version (In case the newest doesn't work):
+
+` pip install -r requirements.txt  `
 
 Here are the [full python virtualenv docs](https://docs.python.org/3/library/venv.html) if needed.
 
